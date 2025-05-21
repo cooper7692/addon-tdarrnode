@@ -5,7 +5,7 @@
   "description": "Runs a Tdarr Node for distributed transcoding",
   "startup": "services",
   "boot": "auto",
-  "image": "ghcr.io/haveagitgat/tdarr_node",
+  "image": "ghcr.io/haveagitgat/tdarr_node:latest",
   "arch": ["amd64"],
   "host_network": true,
   "privileged": ["SYS_ADMIN", "DAC_READ_SEARCH"],
@@ -14,7 +14,8 @@
   "options": {
     "tdarr_server_ip": "192.168.1.100",
     "tdarr_server_port": 8266,
-    "node_id": "HA_Node"
+    "node_id": "HA_Node",
+    "enable_logging": true
   },
   "schema": {
     "tdarr_server_ip": "str",
