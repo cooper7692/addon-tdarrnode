@@ -1,0 +1,3 @@
+FROM ghcr.io/haveagitgat/tdarr_node:2.00.15
+
+ENTRYPOINT ["/app/Tdarr_Node"]

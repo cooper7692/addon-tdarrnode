@@ -1,11 +1,10 @@
 {
   "name": "Tdarr Node",
-  "version": "latest",
+  "version": "1.0",
   "slug": "tdarr_node",
   "description": "Runs a Tdarr Node for distributed transcoding",
   "startup": "services",
   "boot": "auto",
-  "image": "ghcr.io/haveagitgat/tdarr_node",
   "arch": ["amd64"],
   "host_network": true,
   "privileged": ["SYS_ADMIN", "DAC_READ_SEARCH"],
