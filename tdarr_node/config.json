@@ -1,0 +1,24 @@
+{
+  "name": "Tdarr Node",
+  "version": "1.0",
+  "slug": "tdarr_node",
+  "description": "Runs a Tdarr Node for distributed transcoding",
+  "arch": ["amd64"],
+  "startup": "services",
+  "boot": "auto",
+  "hassio_api": false,
+  "host_network": true,
+  "privileged": ["SYS_ADMIN", "DAC_READ_SEARCH"],
+  "devices": ["/dev/dri"],
+  "map": ["config:rw", "media:rw"],
+  "options": {
+    "tdarr_server_ip": "192.168.1.100",
+    "tdarr_server_port": 8266,
+    "node_id": "HA_Node"
+  },
+  "schema": {
+    "tdarr_server_ip": "str",
+    "tdarr_server_port": "int",
+    "node_id": "str"
+  }
+}
