@@ -16,10 +16,12 @@ RUN apt update && apt install -y \
     libva2 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl -L -o /tdarr_node.tar.gz https://github.com/HaveAGitGat/Tdarr/releases/latest/download/Tdarr_Node_Linux.tar.gz \
+RUN set -ex \
+    && curl -fSL -o /tdarr_node.tar.gz https://github.com/HaveAGitGat/Tdarr/releases/latest/download/Tdarr_Node_Linux.tar.gz \
     && mkdir -p /app/tdarr_node \
     && tar -xzf /tdarr_node.tar.gz -C /app/tdarr_node \
     && rm /tdarr_node.tar.gz
+
 
 WORKDIR /app/tdarr_node
 
