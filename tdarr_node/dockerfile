@@ -1,9 +1,18 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-debian:bullseye
 FROM ${BUILD_FROM}
 
-ENV LANG C.UTF-8
+RUN apt-get update && \
+    apt-get install -y curl unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN curl -L https://github.com/HaveAGitGat/Tdarr/releases/latest/download/Tdarr_Updater_linux_x64.zip -o Tdarr_Updater.zip && \
+    unzip Tdarr_Updater.zip -d /tdarr && \
+    chmod +x /tdarr/Tdarr_Updater && \
+    rm Tdarr_Updater.zip
 
 COPY run.sh /run.sh
-RUN chmod a+x /run.sh
+RUN chmod +x /run.sh
+
+WORKDIR /tdarr
 
 CMD [ "/run.sh" ]

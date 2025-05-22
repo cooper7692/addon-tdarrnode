@@ -2,14 +2,14 @@
   "name": "Tdarr Node",
   "version": "1.0.0",
   "slug": "tdarr_node",
-  "description": "Tdarr Node for distributed video transcoding",
+  "description": "Runs a Tdarr Node as a Home Assistant addon",
   "startup": "services",
   "boot": "auto",
   "init": false,
   "hassio_api": false,
   "homeassistant_api": false,
   "host_network": true,
-  "privileged": ["SYS_ADMIN"],
+  "privileged": [],
   "options": {
     "TDARR_SERVER_IP": "192.168.1.100",
     "TDARR_SERVER_PORT": "8266",
@@ -19,5 +19,8 @@
     "TDARR_SERVER_IP": "str",
     "TDARR_SERVER_PORT": "str",
     "TDARR_NODE_NAME": "str"
-  }
+  },
+  "map": [
+    "config:rw"
+  ]
 }
