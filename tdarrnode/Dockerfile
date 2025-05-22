@@ -1,4 +1,5 @@
-FROM ghcr.io/hassio-addons/debian-base:7.8.3
+ARG BUILD_FROM
+FROM ${BUILD_FROM}
 
 LABEL maintainer="Cooper7692"
 
