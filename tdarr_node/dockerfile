@@ -1,17 +1,9 @@
 ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-debian:bullseye
 FROM ${BUILD_FROM}
 
-# Install dependencies
-RUN apt-get update && \
-    apt-get install -y curl unzip && \
-    rm -rf /var/lib/apt/lists/*
+ENV LANG C.UTF-8
 
-# Download Tdarr Node binary
-RUN curl -L https://github.com/HaveAGitGat/Tdarr/releases/latest/download/Tdarr_Node_Linux.zip -o tdarr_node.zip && \
-    unzip tdarr_node.zip -d /tdarr_node && \
-    chmod +x /tdarr_node/Tdarr_Node && \
-    rm tdarr_node.zip
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
 
-WORKDIR /tdarr_node
-
-CMD ["./Tdarr_Node"]
+CMD [ "/run.sh" ]
