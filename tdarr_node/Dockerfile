@@ -1,4 +1,3 @@
-
 FROM ghcr.io/hassio-addons/debian-base:7.8.3
 
 LABEL maintainer="Cooper7692"
