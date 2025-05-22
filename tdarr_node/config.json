@@ -10,6 +10,7 @@
   "homeassistant_api": false,
   "host_network": true,
   "privileged": [],
+  "arch": ["amd64", "aarch64"],
   "options": {
     "TDARR_SERVER_IP": "192.168.1.100",
     "TDARR_SERVER_PORT": "8266",
