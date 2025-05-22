@@ -1,23 +1,23 @@
 {
   "name": "Tdarr Node",
-  "version": "1.0",
+  "version": "1.0.0",
   "slug": "tdarr_node",
-  "description": "Runs a Tdarr Node for distributed transcoding",
+  "description": "Runs a Tdarr Node as a Home Assistant addon",
   "startup": "services",
   "boot": "auto",
-  "arch": ["amd64"],
+  "init": false,
+  "hassio_api": false,
+  "homeassistant_api": false,
   "host_network": true,
-  "privileged": ["SYS_ADMIN", "DAC_READ_SEARCH"],
-  "devices": ["/dev/dri"],
-  "map": ["media:rw", "config:rw", "share:rw"],
+  "privileged": [],
   "options": {
-    "tdarr_server_ip": "192.168.1.100",
-    "tdarr_server_port": 8266,
-    "node_id": "HA_Node"
+    "TDARR_SERVER_IP": "192.168.1.100",
+    "TDARR_SERVER_PORT": "8266",
+    "TDARR_NODE_NAME": "HA-Node"
   },
   "schema": {
-    "tdarr_server_ip": "str",
-    "tdarr_server_port": "int",
-    "node_id": "str"
+    "TDARR_SERVER_IP": "str",
+    "TDARR_SERVER_PORT": "str",
+    "TDARR_NODE_NAME": "str"
   }
 }

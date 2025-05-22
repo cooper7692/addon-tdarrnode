@@ -1,3 +1,5 @@
-FROM ghcr.io/haveagitgat/tdarr_node:2.00.15
+FROM ghcr.io/haveagitgat/tdarr_node:latest
 
-ENTRYPOINT ["/app/Tdarr_Node"]
+ENV TZ=Etc/Ameerica/Detroit
+
+CMD ["./Tdarr_Node"]
