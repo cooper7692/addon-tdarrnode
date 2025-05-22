@@ -1,5 +1,17 @@
-FROM ghcr.io/haveagitgat/tdarr_node:latest
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base-debian:bullseye
+FROM ${BUILD_FROM}
 
-ENV TZ=Etc/Ameerica/Detroit
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y curl unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+# Download Tdarr Node binary
+RUN curl -L https://github.com/HaveAGitGat/Tdarr/releases/latest/download/Tdarr_Node_Linux.zip -o tdarr_node.zip && \
+    unzip tdarr_node.zip -d /tdarr_node && \
+    chmod +x /tdarr_node/Tdarr_Node && \
+    rm tdarr_node.zip
+
+WORKDIR /tdarr_node
 
 CMD ["./Tdarr_Node"]
