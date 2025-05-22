@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-./Tdarr_Updater
+echo "[INFO] Starting Tdarr Node Updater..."
+/tdarr/Tdarr_Updater
 
-sleep 10
+echo "[INFO] Waiting for node to finish setup..."
+sleep 60
 
-export TDARR_SERVER_IP=${TDARR_SERVER_IP}
-export TDARR_SERVER_PORT=${TDARR_SERVER_PORT}
-export TDARR_NODE_NAME=${TDARR_NODE_NAME}
-
-./Tdarr_Node/Tdarr_Node
+echo "[INFO] Launching Tdarr Node..."
+exec ./Tdarr_Node
