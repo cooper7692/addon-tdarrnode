@@ -4,7 +4,23 @@ echo "[INFO] Starting Tdarr Node Updater..."
 /tdarr/Tdarr_Updater
 
 echo "[INFO] Waiting for node to finish setup..."
-sleep 60
+sleep 59
 
-echo "[INFO] Launching Tdarr Node..."
+echo "[INFO] Creating config file..."
+cat <<EOF > /config/Tdarr_Node_Config.json
+{
+  "nodeID": "${NODEID}",
+  "serverIP": "${SERVERIP}",
+  "serverPort": "${SERVERPORT}",
+  "nodeIP": "0.0.0.0",
+  "nodePort": "8267",
+  "ffmpegPath": "",
+  "handBrakePath": "",
+  "nodeTempPath": "/temp"
+}
+EOF
+
+echo "[INFO] Launching Tdarr Node with configuration:"
+cat /config/Tdarr_Node_Config.json
+
 exec ./Tdarr_Node
