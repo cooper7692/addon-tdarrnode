@@ -1,7 +1,7 @@
 {
   "name": "Tdarr Node",
   "version": "1.1.0",
-  "slug": "tdarr_node",
+  "slug": "tdarrnode",
   "description": "Tdarr Node for distributed media transcoding",
   "arch": ["amd64", "aarch64"],
   "startup": "services",
@@ -10,7 +10,7 @@
   "host_network": true,
   "privileged": ["SYS_ADMIN"],
   "options": {
-    "nodeID": "MyTdarrNode",
+    "nodeID": "HA-Node",
     "serverIP": "127.0.0.1",
     "serverPort": "8266"
   },
