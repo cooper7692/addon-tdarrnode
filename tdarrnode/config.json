@@ -4,14 +4,14 @@
   "slug": "tdarrnode",
   "description": "Tdarr Node for distributed media transcoding",
   "arch": ["amd64", "aarch64"],
-  "startup": "application",
+  "startup": "services",
   "boot": "auto",
   "hassio_api": false,
   "host_network": true,
   "privileged": ["SYS_ADMIN"],
   "options": {
     "nodeID": "HA-Node",
-    "serverIP": "127.0.0.1",
+    "serverIP": "192.168.1.132",
     "serverPort": "8266"
   },
   "schema": {
