@@ -4,7 +4,7 @@
   "slug": "tdarrnode",
   "description": "Tdarr Node for distributed media transcoding",
   "arch": ["amd64", "aarch64"],
-  "startup": "application",
+  "startup": "services",
   "init": false,
   "boot": "auto",
   "hassio_api": false,
