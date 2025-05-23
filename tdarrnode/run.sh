@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-echo "[INFO] Starting Tdarr Node Updater..."
+echo "[\$(date '+%Y-%m-%d %H:%M:%S')] Starting Tdarr Node Updater..."
 /tdarr/Tdarr_Updater
 
-echo "[INFO] Waiting for node to finish setup..."
+echo "[\$(date '+%Y-%m-%d %H:%M:%S')] Waiting for node to finish setup..."
 sleep 10
 
-echo "[INFO] Creating config file..."
+echo "[\$(date '+%Y-%m-%d %H:%M:%S')] Creating config file..."
 cat <<EOF > /config/Tdarr_Node_Config.json
 {
   "nodeID": "${NODEID}",
@@ -20,7 +20,7 @@ cat <<EOF > /config/Tdarr_Node_Config.json
 }
 EOF
 
-echo "[INFO] Launching Tdarr Node with configuration:"
+echo "[\$(date '+%Y-%m-%d %H:%M:%S')] Launching Tdarr Node with configuration:"
 cat /config/Tdarr_Node_Config.json
 
 exec /tdarr/Tdarr_Node
