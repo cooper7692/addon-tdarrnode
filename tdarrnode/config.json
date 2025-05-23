@@ -3,14 +3,20 @@
   "version": "1.1.8",
   "slug": "tdarrnode",
   "description": "Tdarr Node for distributed media transcoding",
-  "arch": ["amd64", "aarch64"],
+  "arch": [
+    "amd64",
+    "aarch64"
+  ],
   "startup": "services",
-  "init": false,
   "boot": "auto",
   "hassio_api": false,
   "host_network": true,
-  "privileged": ["SYS_ADMIN"],
-  "map": ["config:rw"],
+  "privileged": [
+    "SYS_ADMIN"
+  ],
+  "map": [
+    "config:rw"
+  ],
   "options": {
     "serverIP": "127.0.0.1",
     "serverPort": "8266",
@@ -28,4 +34,3 @@
     "pollInterval": "int"
   }
 }
-

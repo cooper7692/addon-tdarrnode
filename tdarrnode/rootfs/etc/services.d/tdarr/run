@@ -1,5 +1,4 @@
 #!/usr/bin/with-contenv bash
-# shellcheck shell=bash
 
 cd /tdarr || exit 1
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Changed working directory to /tdarr"
@@ -41,4 +40,3 @@ EOF
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Launching Tdarr Node..."
 exec ./Tdarr_Node
-echo "[$(date '+%Y-%m-%d %H:%M:%S')] Tdarr Node has exited."
