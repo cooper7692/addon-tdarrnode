@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/with-contenv bash
 
 echo "[INFO] Starting Tdarr Node Updater..."
 /tdarr/Tdarr_Updater
 
 echo "[INFO] Waiting for node to finish setup..."
-sleep 59
+sleep 10
 
 echo "[INFO] Creating config file..."
 cat <<EOF > /config/Tdarr_Node_Config.json
@@ -23,4 +23,4 @@ EOF
 echo "[INFO] Launching Tdarr Node with configuration:"
 cat /config/Tdarr_Node_Config.json
 
-exec ./Tdarr_Node
+exec /tdarr/Tdarr_Node
