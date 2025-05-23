@@ -18,4 +18,4 @@ RUN curl -L https://storage.tdarr.io/versions/2.17.01/linux_x64/Tdarr_Updater.zi
  && chmod +x /tdarr/Tdarr_Updater \
  && rm /tmp/Tdarr_Updater.zip
 
-COPY etc /etc
+COPY rootfs / 
