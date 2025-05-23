@@ -10,13 +10,21 @@ RUN apt-get update && apt-get install -y \
     npm \
     jq \
     bash \
-    && mkdir -p /tdarr \
+    ffmpeg \
+    libavcodec-extra \
+    mkvtoolnix \
+    handbrake-cli \
+    libtesseract-dev  \
     && rm -rf /var/lib/apt/lists/*
+
+#Mkdir /Tdarr 
+RUN mkdir -p /tdarr
+# Install Tdarr Node
+COPY /tdarr/* /tdarr/
 
 RUN curl -L https://storage.tdarr.io/versions/2.17.01/linux_x64/Tdarr_Updater.zip -o /tmp/Tdarr_Updater.zip \
  && unzip /tmp/Tdarr_Updater.zip -d /tdarr \
- && chmod +x /tdarr/Tdarr_Updater \
- && rm /tmp/Tdarr_Updater.zip
+ && chmod +x /tdarr/Tdarr_Updater
 
 COPY run.sh /run.sh
 CMD ["/run.sh"]
