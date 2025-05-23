@@ -20,4 +20,10 @@ RUN chmod a+x /run.sh
 
 WORKDIR /tdarr
 
+HEALTHCHECK CMD pgrep Tdarr_Node || exit 1
+# Optional
+# HEALTHCHECK CMD curl -f http://localhost:8265/ || exit 1
+# Optional
+
 CMD [ "/run.sh" ]
+
