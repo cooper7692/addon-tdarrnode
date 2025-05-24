@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.8.3
+ARG BUILD_FROM=ghcr.io/linuxserver/baseimage-ubuntu:jammy
 FROM ${BUILD_FROM}
 
 LABEL maintainer="Cooper7692"
@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -y \
     && mkdir -p /tdarr \
     && rm -rf /var/lib/apt/lists/*
 
+COPY tdarr /tdarr
+
 # Download and install the Tdarr Updater binary
 RUN curl -L https://storage.tdarr.io/versions/2.17.01/linux_x64/Tdarr_Updater.zip -o /tmp/Tdarr_Updater.zip \
  && unzip /tmp/Tdarr_Updater.zip -d /tdarr \
@@ -25,4 +27,5 @@ RUN curl -L https://storage.tdarr.io/versions/2.17.01/linux_x64/Tdarr_Updater.zi
 
 # Copy s6-overlay services and static Tdarr directory
 COPY rootfs /
-COPY tdarr /tdarr
+RUN chmod +x /etc/services.d/tdarr/run
+
