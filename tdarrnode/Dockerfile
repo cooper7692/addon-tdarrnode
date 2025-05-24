@@ -1,4 +1,5 @@
-ARG BUILD_FROM=ghcr.io/linuxserver/baseimage-ubuntu:jammy
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base:7.8.3
+
 FROM ${BUILD_FROM}
 
 LABEL maintainer="Cooper7692"
