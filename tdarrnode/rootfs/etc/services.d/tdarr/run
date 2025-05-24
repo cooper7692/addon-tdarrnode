@@ -42,4 +42,4 @@ EOF
 cd /tdarr/Tdarr_Node
 chmod +x Tdarr_node
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Launching Tdarr Node..."
-exec Tdarr ./Tdarr_Node
+exec ./tdarr/Tdarr_Node
