@@ -12,8 +12,9 @@ RUN wget -O Tdarr_Updater.zip https://github.com/HaveAGitGat/Tdarr/releases/late
     unzip Tdarr_Updater.zip && \
     chmod +x Tdarr_Updater && \
     ./Tdarr_Updater && \
+    rm -rf /opt/tdarr/Tdarr_Server || true && \
     rm -f Tdarr_Updater Tdarr_Updater.zip && \
-    rm -rf /opt/tdarr/Tdarr_Server || true && rm -f /opt/tdarr/Tdarr_Updater || true
+    rm -f /opt/tdarr/Tdarr_Updater || true
 
 RUN chown -R tdarr:tdarr /opt/tdarr
 
