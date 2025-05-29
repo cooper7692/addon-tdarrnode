@@ -1,0 +1,17 @@
+{
+  "name": "Tdarr Node",
+  "version": "1.0.0",
+  "slug": "tdarr_node",
+  "description": "Tdarr Node Add-on for Home Assistant with updater support",
+  "arch": ["amd64", "aarch64"],
+  "startup": "services",
+  "boot": "auto",
+  "init": false,
+  "ports": {
+    "8266/tcp": 8266
+  },
+  "map": ["config:rw"],
+  "options": {},
+  "schema": {},
+  "image": "local/tdarr_node"
+}

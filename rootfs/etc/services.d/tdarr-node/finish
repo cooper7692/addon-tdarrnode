@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+echo "Tdarr Node stopped."

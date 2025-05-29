@@ -1,0 +1,4 @@
+#!/usr/bin/execlineb -P
+with-contenv
+cd /opt/tdarr/Tdarr_Node
+node Tdarr_Node.js

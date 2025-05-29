@@ -1,4 +1,9 @@
-# Tdarr Node Addon for Home Assistant
+# Tdarr Node Home Assistant Add-on
 
-This addon installs and runs a Tdarr Node, used for distributed media transcoding.  
-Uses upstream binaries from [Tdarr](https://docs.tdarr.io/docs/installation/windows-linux-macos).
+This add-on runs the Tdarr Node as PID 1 using s6-overlay v3, with support for the official Tdarr_Updater at build time.
+
+## Features
+- Auto-downloads the latest Tdarr_Node
+- Starts node cleanly using s6 overlay
+- Mounts config to `/config/tdarr_node/`
+- Cleans up updater artifacts
