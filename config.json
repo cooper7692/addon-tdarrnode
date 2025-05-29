@@ -12,6 +12,5 @@
   },
   "map": ["config:rw"],
   "options": {},
-  "schema": {},
-  "image": "local/tdarr_node"
+  "schema": {},"
 }
