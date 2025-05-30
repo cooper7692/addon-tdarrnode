@@ -3,7 +3,7 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-RUN apk add --no-cache nodejs npm ffmpeg jq unzip wget
+RUN apk add --no-cache npm ffmpeg jq unzip wget mvkpropedit
 
 RUN addgroup -S tdarr && adduser -S tdarr -G tdarr
 WORKDIR /opt/tdarr
@@ -15,6 +15,7 @@ RUN wget -O Tdarr_Updater.zip https://github.com/HaveAGitGat/Tdarr/releases/late
     rm -rf /opt/tdarr/Tdarr_Server || true && \
     rm -f Tdarr_Updater Tdarr_Updater.zip && \
     rm -f /opt/tdarr/Tdarr_Updater || true
+    
 
 RUN chown -R tdarr:tdarr /opt/tdarr
 
